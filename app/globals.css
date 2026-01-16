@@ -1,0 +1,216 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* AirBloom Day Mode - Pastel Blue Color Palette */
+
+  /* Backgrounds & Surfaces - Soft pastel blue tones */
+  --background: #f0f7fc;
+  --foreground: #2c3e50;
+  --card: #ffffff;
+  --card-foreground: #2c3e50;
+  --popover: #ffffff;
+  --popover-foreground: #2c3e50;
+
+  /* Primary - Pastel blue as main color */
+  --primary: #87ceeb;
+  --primary-foreground: #1a4d6d;
+
+  /* Accent - Soft complementary pastel */
+  --accent: #b8d8f5;
+  --accent-foreground: #1a4d6d;
+
+  /* Neutrals - Light blue-grey scale */
+  --secondary: #e3f2fd;
+  --secondary-foreground: #2c3e50;
+  --muted: #c5e1f5;
+  --muted-foreground: #546e7a;
+
+  /* Status Colors - Soft pastel tones */
+  --destructive: #f8bbd0;
+  --destructive-foreground: #c2185b;
+
+  /* Borders & Inputs */
+  --border: #d6ebf5;
+  --input: #e3f2fd;
+  --ring: #87ceeb;
+
+  /* Chart Colors - Pastel blue variations */
+  --chart-1: #87ceeb;
+  --chart-2: #a8d8ea;
+  --chart-3: #6fb1d8;
+  --chart-4: #b3e5fc;
+  --chart-5: #5ca3cc;
+
+  --radius: 0.625rem;
+
+  /* Sidebar - Pastel blue theme */
+  --sidebar: #87ceeb;
+  --sidebar-foreground: #1a4d6d;
+  --sidebar-primary: #6fb1d8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #b3e5fc;
+  --sidebar-accent-foreground: #1a4d6d;
+  --sidebar-border: #a8d8ea;
+  --sidebar-ring: #87ceeb;
+}
+
+.dark {
+  /* Minimal dark mode - kept for compatibility but defaulting to light */
+  --background: #f0f7fc;
+  --foreground: #2c3e50;
+  --card: #ffffff;
+  --card-foreground: #2c3e50;
+  --popover: #ffffff;
+  --popover-foreground: #2c3e50;
+
+  --primary: #87ceeb;
+  --primary-foreground: #1a4d6d;
+
+  --accent: #b8d8f5;
+  --accent-foreground: #1a4d6d;
+
+  --secondary: #e3f2fd;
+  --secondary-foreground: #2c3e50;
+  --muted: #c5e1f5;
+  --muted-foreground: #546e7a;
+
+  --destructive: #f8bbd0;
+  --destructive-foreground: #c2185b;
+
+  --border: #d6ebf5;
+  --input: #e3f2fd;
+  --ring: #87ceeb;
+
+  --chart-1: #87ceeb;
+  --chart-2: #a8d8ea;
+  --chart-3: #6fb1d8;
+  --chart-4: #b3e5fc;
+  --chart-5: #5ca3cc;
+
+  --sidebar: #87ceeb;
+  --sidebar-foreground: #1a4d6d;
+  --sidebar-primary: #6fb1d8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #b3e5fc;
+  --sidebar-accent-foreground: #1a4d6d;
+  --sidebar-border: #a8d8ea;
+  --sidebar-ring: #87ceeb;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* Light pastel blue gradient background for day mode */
+  body {
+    @apply text-foreground;
+    background: linear-gradient(135deg, #f0f7fc 0%, #e3f2fd 25%, #d6ebf5 50%, #e3f2fd 75%, #f0f7fc 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 20s ease infinite;
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, #f0f7fc 0%, #e3f2fd 25%, #d6ebf5 50%, #e3f2fd 75%, #f0f7fc 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 20s ease infinite;
+  }
+
+  /* Add animation utilities for weather elements */
+  @keyframes wind-blow {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(8px);
+    }
+  }
+
+  @keyframes cloud-float {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+  }
+
+  @keyframes sun-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes smoke-rise {
+    0% {
+      transform: translateY(0) scaleY(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-20px) scaleY(0.8);
+      opacity: 0;
+    }
+  }
+
+  /* Added gradient shift animation for background */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
