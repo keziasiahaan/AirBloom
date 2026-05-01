@@ -28,5 +28,16 @@ export default function AdminPage() {
     return null
   }
 
-  return <AdminDashboard />
+  return (
+    <div className="relative">
+      <button
+        onClick={() => router.push("/admin/alerts")}
+        className="absolute right-6 top-6 z-10 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+      >
+        Kelola Alert
+      </button>
+
+      <AdminDashboard />
+    </div>
+  )
 }

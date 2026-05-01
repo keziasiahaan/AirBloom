@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "title": "Kualitas Udara Sedang",
+    "location": "Kampus Utama",
+    "level": "Sedang",
+    "message": "Kualitas udara masih aman, namun disarankan mengurangi aktivitas berat di luar ruangan.",
+    "createdAt": "2026-05-01"
+  }
+]
